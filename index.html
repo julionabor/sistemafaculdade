@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,500;0,600;0,800;1,100;1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <title>Sistema de Gestao Faculdade</title>
+</head>
+<body>
+  <header>
+  <!--Navbar Menu-->
+  <div class="nav-bar">
+    <a href="#home"><img src="./img/education.png" alt="Sistema de Gestão" />
+    <legend>Sistema de Gestão Magnifinance</legend></a>
+    <ul>
+     <li>
+        <a href="#home"><i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p></a>
+      </li>
+
+      <li>
+        <a href="#cursos"><i class="fa fa-book" aria-hidden="true"></i>
+        <p>CURSOS</p></a>
+      </li>
+      <li>
+        <a href="#alunos"><i class="fa fa-user" aria-hidden="true"></i>
+        <p>ALUNOS</p></a>
+      </li>
+      <li>
+        <a href="#professores"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+        <p>PROFESSORES</p></a>
+      </li>
+    </ul>
+  </div>
+</header>
+<main>
+  <!--Container Home-->
+  <div id="home" class="container">
+    <h1>Bem vindo ao Sistema de Gestão de Faculdade</h1>
+    <img src="./img/study.jpg">
+    <p>Aqui você poderá consultar nossos cursos disponíveis,
+      assim como todos alunos e professores.
+      Cada aluno tera acesso as suas notas de acordo com o semestre.
+      Juntamente com essas informações, tera também seu numero de matricula e dados pessoais.
+    </p>
+  </div>
+  <!--Cursos-->
+    <div id="cursos" class="container">
+      <h1>Cursos</h1>
+        <p>Selecione o seu curso:</p>
+        <div>
+          <form>
+            <select id="selecionarCurso" onchange="semestre()">
+              <option checked>Selecione o curso <i class="fa fa-arrow-down"></i> </option>
+              
+            </select>
+          </form>
+        </div>
+        <!--Semestres-->
+        <button class="accordion">
+          <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 1º Semestre
+        </button>
+        <div class="panel">
+          <div id="rTable">
+            <table class="rTable">
+                 <thead>
+                     <tr>
+                        <th>Alunos <i class="fa fa-filter" aria-hidden="true"></i></th>
+                        <th>Disciplina <i class="fa fa-filter" aria-hidden="true"></i></th>
+                        <th>Professor <i class="fa fa-filter" aria-hidden="true"></i></th>
+                        <th>Notas <i class="fa fa-filter" aria-hidden="true"></i></th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         
+                         <td>Ana Silva</td>
+                         <td>Matematica</td>
+                         <td>Jose Ferreira</td>
+                         <td>20</td>
+                     </tr>
+                     <tr>
+                         <td>Ana Silva</td>
+                         <td>Portugues</td>
+                         <td>Deolinda Carneiro</td>
+                         <td>11</td>
+                     </tr>
+                     <tr>
+                         <td>Bruno</td>
+                         <td>Programação</td>
+                         <td>Cesar Alberto</td>
+                         <td>17</td>
+                     </tr>
+                     <tr>
+                         <td>Ana</td>
+                         <td>Programação</td>
+                         <td>Cesar Alberto</td>
+                         <td>17</td>
+                     </tr>
+                     
+                  </tbody>
+            </table>
+         </div>
+       </div>
+      
+        <button class="accordion">
+          <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 2º Semestre</button>
+        <div class="panel">
+          <div id="rTable">
+            <table class="rTable">
+                 <thead>
+                     <tr>
+                        <th>Alunos <i class="fa fa-filter" aria-hidden="true"></i></th>
+                        <th>Disciplina <i class="fa fa-filter" aria-hidden="true"></i></th>
+                        <th>Professor <i class="fa fa-filter" aria-hidden="true"></i></th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         
+                         <td>Ana Silva</td>
+                         <td>Matematica</td>
+                         <td>Jose Ferreira</td>
+                     </tr>
+                     <tr>
+                         <td>Ana Silva</td>
+                         <td>Portugues</td>
+                         <td>Deolinda Carneiro</td>
+                     </tr>
+                     <tr>
+                         <td>Ana</td>
+                         <td>Programação</td>
+                         <td>Cesar Alberto</td>
+                     </tr>
+                   
+                  </tbody>
+            </table>
+          </div>
+        </div>
+
+        <button class="accordion">
+          <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 3º Semestre</button>
+        <div class="panel">
+          <div id="rTable">
+            <table class="rTable">
+                 <thead>
+                     <tr>
+                        <th>Alunos <i class="fa fa-filter" aria-hidden="true"></i></th>
+                        <th>Disciplina <i class="fa fa-filter" aria-hidden="true"></i></th>
+                        <th>Professor <i class="fa fa-filter" aria-hidden="true"></i></th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr>
+                         
+                         <td>Ana Silva</td>
+                         <td>Matematica</td>
+                         <td>Jose Ferreira</td>
+                     </tr>
+                     <tr>
+                         <td>Ana Silva</td>
+                         <td>Portugues</td>
+                         <td>Deolinda Carneiro</td>
+                     </tr>
+                     <tr>
+                         <td>Ana</td>
+                         <td>Programação</td>
+                         <td>Cesar Alberto</td>
+                     </tr>
+                     
+                  </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    
+  <!--Cards Alunos-->
+  <div id="alunos" class="container">
+    <h1>Alunos</h1>
+    <p><i class="fa fa-plus" aria-hidden="true" onclick="showAdd()"></i> Adicionar aluno</p>
+    <!--Novo aluno-->
+    <div id="add_aluno" class="add_aluno">
+        <form>
+         <label>Nome</label>
+          <input type="text" id="novo_aluno" placeholder="Digite o nome do aluno"> <br>
+          <label>Nº de Matrícula</label>
+          <input type="number" id="novo_nrmatricula" placeholder="Digite o numero de matricula"> <br>
+          <label>Data de Nascimento</label>
+          <input type="date" id="nova_datanasc"><br>
+          <label>Selecione o seu curso</label>
+          <select id="scurso">
+              <option checked> Selecione o curso </option>
+          </select>
+          <br>
+          <label>Disciplina</label>
+          <input type="text" id="nova_disciplina1" placeholder="Digite o nome da disciplina"> <br>
+          <label>Nota</label>
+          <input type="text" id="nova_nota1" placeholder="Digite a nota"> <br>
+          
+          <label>Disciplina</label>
+          <input type="text" id="nova_disciplina2" placeholder="Digite o nome da disciplina"> <br>
+          <label>Nota</label>
+          <input type="text" id="nova_nota2" placeholder="Digite a nota"> <br>
+          
+          <label>Disciplina</label>
+          <input type="text" id="nova_disciplina3" placeholder="Digite o nome da disciplina"> <br>
+          <label>Nota</label>
+          <input type="text" id="nova_nota3" placeholder="Digite a nota"> <br>
+          
+          <button type="submit"  onclick="adicionar_aluno()">Registar</button>
+        </form>
+    </div>
+    <!--Editar aluno-->
+        <!-- Trigger/Open The Modal -->
+       <!-- <button id="myBtn">Editar</button> -->
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+           
+          <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+            <div class="card" id="edit">
+              <img src="./img/img_avatar.png" alt="Avatar">
+              <div class="dados">
+                <i class="fa fa-times-circle-o" aria-hidden="true"></i></i> 
+                <i class="fa fa-check-square-o" aria-hidden="true"></i><br>
+                <input type="text" id="nameEdit"> 
+                <p>Nº matrícula: <input type="number" id="matriculaEdit"> </p>
+                <p>Data de Nascimento: <input type="text" id="dateEdit"> </p>
+                
+              </div>
+            </div>
+        </div>
+      </div>
+    
+    <!--Fim do modal--> 
+  
+    <!--Lista alunos-->
+    <div class="cards-alunos">
+    </div>
+
+  </div>
+ 
+  <!--Professores-->
+  <div id="professores" class="container">
+    <h1>Professores</h1>
+    <p>Lista de Professores</p>
+    <table class="rTable">
+      <thead>
+        <tr>
+          <th>Professor</th>
+          <th>Data de Nascimento</th>
+          <th>Salario</th>
+          <th>Disciplina</th>
+          <th>Editar</th>
+        </tr>
+      </thead>
+        <tbody id="rowProf">
+
+        </tbody>
+    </table>
+  </div>
+</main>
+<!--Footer-->
+<footer>
+  <span>&copy;Julio Nabor 2022 - Front-end Developer<br>
+    <i class="fa fa-facebook"></i>
+    <i class="fa fa-linkedin"></i>
+    <i class="fa fa-github"></i>
+  </span>
+</footer>
+
+<script src="./js/lista.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
