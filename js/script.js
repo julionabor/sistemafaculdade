@@ -1,6 +1,7 @@
 //Lista alunos
 
 let dados = []
+let id = [0+1]
 var count = 0;
 for(let i=0; i< listaCursos.length; i++){
      dados = listaCursos[i].aluno
@@ -21,15 +22,17 @@ for(let i=0; i< listaCursos.length; i++){
         }
         
         var cardAluno = document.createElement('div')
-        cardAluno.setAttribute('id', 'card');
+        cardAluno.setAttribute('id', `card${id}`);
         cardAluno.classList =`card`;
-        
+        //console.log(i,num_matricula,nome_aluno,data_nasc,disciplina[i],nota[i])
         let seccaoAlunos = document.querySelector(".cards-alunos");
         cardAluno.innerHTML= `
                   <img src="./img/img_avatar.png" alt="Avatar">
                   <div class="dados">
                     <h4><b>${nome_aluno} </b>
-                      <i class="fa fa-pencil-square-o" aria-hidden="true" id="myBtn" onclick="editar_aluno(${num_matricula})">
+                      <i class="fa fa-pencil-square-o" aria-hidden="true" id="myBtn" 
+                      onclick="editar_aluno(${id})">
+                      
                       </i>
                     </h4>
                     <p>Nº matrícula: ${num_matricula}</p>
@@ -49,6 +52,7 @@ for(let i=0; i< listaCursos.length; i++){
                   `;
         
             seccaoAlunos.appendChild(cardAluno)
+            id++
             
             
            for(var d=0; d < disciplina.length; d++){
@@ -67,7 +71,7 @@ for(let i=0; i< listaCursos.length; i++){
                      
  }
 //Listar Professores
-
+function professores() {
 let dadosP = []
 for(var i=0; i < listaCursos.length; i++){
      dadosP = listaCursos[i].professor
@@ -118,7 +122,7 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
-
+}
 //select curso
 
   const select = document.getElementById('scurso');
@@ -166,6 +170,7 @@ function adicionar_aluno(){
     var nome = document.getElementById("novo_aluno").value;
     var datanasc = document.getElementById("nova_datanasc").value;
     var matricula = document.getElementById("novo_nrmatricula").value;
+    var curso = document.getElementById("scurso").value;
     var disc1 = document.getElementById("nova_disciplina1").value;
     var nota1 = document.getElementById("nova_nota1").value;
     var disc2 = document.getElementById("nova_disciplina2").value;
@@ -173,15 +178,26 @@ function adicionar_aluno(){
     var disc3 = document.getElementById("nova_disciplina3").value;
     var nota3 = document.getElementById("nova_nota3").value;
     if((nome || matricula || datanasc || disc1 || nota1 || disc2 || nota2 || disc3 || nota3) != ''){
-      console.log("entrou")
-      registar_aluno(nome,matricula,datanasc,disc1,nota1,disc2,nota2,disc3,nota3);
+        registar_aluno(nome,matricula,datanasc,curso,disc1,nota1,disc2,nota2,disc3,nota3);
     }else{
       alert("Por favor, todos os campos tem que ser preenchidos")
     }
 }
-function registar_aluno(nome,matricula,datanasc,disc1,nota1,disc2,nota2,disc3,nota3){
-  
+function registar_aluno(nome,matricula,datanasc,curso,disc1,nota1,disc2,nota2,disc3,nota3){
+
+  const discip = [disc1,disc2,disc3]
+  const not = [nota1,nota2,nota3]
   alert("Aluno Registado com sucesso")
+
+  const arr1 = listaCursos.filter((alunos) => alunos.curso === curso)
+  console.log(arr1)
+
+  const arr2 = [matricula,nome,datanasc,discip,not].concat(arr1);
+  
+  arr2.push(arr1)
+  console.log(arr2)
+
+
   //novo card
   let newcard = document.createElement('div')
   //classe do elemento
@@ -268,8 +284,8 @@ function editar_aluno(num){
               if(chave == 'Numero_Matricula' && valor == num){
                 var num_matricula = valor;
                 var nome_aluno = valor;
-                var pos = i+1
-                for (const [key, value] of Object.entries(dados[pos])) {
+                //var pos = i+1
+                for (const [key, value] of Object.entries(dadosAlunos)) {
                     if(key === 'Nome')
                       var nome_aluno = value;
                     else if(key === 'Data_Nascimento')
@@ -278,6 +294,8 @@ function editar_aluno(num){
                       var disc1 = value;     
                     else if(key === 'Nota')
                       var nota1 = value;
+                      
+                  console.log(num)
                   var edit = document.getElementById('edit')
                   edit.removeAttribute= ("hidden");
                   document.getElementById('nameEdit').value = nome_aluno;
@@ -292,7 +310,7 @@ function editar_aluno(num){
           }
         }
               
-    }
+   }
 }
 
 

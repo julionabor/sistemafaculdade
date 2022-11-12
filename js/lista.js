@@ -28,21 +28,21 @@ let listaCursos = [
                 }],
       aluno: [
                 {
-                  Numero_Matricula : "1",
+                  Numero_Matricula : "01",
                   Nome : "Ana Silva",
                   Data_Nascimento:"1995-07-02",
                   Disciplina: ["Matematica","Portugues","Programação","Ciencias da Tecnologia"],
                   Nota : ["12","19","11","15"]
                 },
                 {
-                  Numero_Matricula : "2",
+                  Numero_Matricula : "02",
                   Nome : "Rui Jorge",
                   Data_Nascimento:"1997-07-02",
                   Disciplina: ["Matematica","Portugues","Programação","Ciencias da Tecnologia"],
                   Nota : ["18","19","11","20"]
                 },
                 {
-                  Numero_Matricula : "3",
+                  Numero_Matricula : "03",
                   Nome : "Nuno Pinto",
                   Data_Nascimento:"2000-07-02",
                   Disciplina: ["Matematica","Portugues","Programação","Ciencias da Tecnologia"],
@@ -78,21 +78,21 @@ let listaCursos = [
                 }],
       aluno: [
                 {
-                  Numero_Matricula : "4",
+                  Numero_Matricula : "04",
                   Nome : "Barbara Leitao",
                   Data_Nascimento:"1995-07-02",
                   Disciplina: ["Matematica","Portugues","Programação","Ciencias da Tecnologia"],
                   Nota : ["12","9","11","20"]
                 },
                 {
-                  Numero_Matricula : "5",
+                  Numero_Matricula : "05",
                   Nome : "Tania Silva",
                   Data_Nascimento:"1995-07-02",
                   Disciplina: ["Matematica","Portugues","Programação","Ciencias da Tecnologia"],
                   Nota : ["20","19","12","15"]
                 },
                 {
-                  Numero_Matricula : "6",
+                  Numero_Matricula : "06",
                   Nome : "Lucia Alves",
                   Data_Nascimento:"1995-07-02",
                   Disciplina: ["Matematica","Portugues","Programação","Ciencias da Tecnologia"],
@@ -128,21 +128,21 @@ let listaCursos = [
                 }],
       aluno: [
                 {
-                  Numero_Matricula : "7",
+                  Numero_Matricula : "07",
                   Nome : "Ana Silva",
                   Data_Nascimento:"1995-07-02",
                   Disciplina: ["Matematica","Portugues","Programação","Ciencias da Tecnologia"],
                   Nota : ["12","19","11","15"]
                 },
                 {
-                  Numero_Matricula : "8",
+                  Numero_Matricula : "08",
                   Nome : "Ana Silva",
                   Data_Nascimento:"1995-07-02",
                   Disciplina: ["Matematica","Portugues","Programação","Ciencias da Tecnologia"],
                   Nota : ["12","19","11","15"]
                 },
                 {
-                  Numero_Matricula : "9",
+                  Numero_Matricula : "09",
                   Nome : "Ana Silva",
                   Data_Nascimento:"1995-07-02",
                   Disciplina: ["Matematica","Portugues","Programação","Ciencias da Tecnologia"],
