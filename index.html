@@ -14,7 +14,38 @@
 </head>
 <body>
   <header>
-  <!--Navbar Menu-->
+    <!--nav responsive-->
+  <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+    
+    <ul class="menu__box">
+        <li class="menu__item">
+          <a href="#home"><img src="./img/education.png" alt="Sistema de Gestão" width="30px"/>
+            
+        </li>
+        <li class="menu__item">
+           <a href="#home"><i class="fa fa-home w3-xxlarge"></i>
+           HOME</a>
+         </li>
+   
+         <li class="menu__item">
+           <a href="#cursos"><i class="fa fa-book" aria-hidden="true"></i>
+           CURSOS</a>
+         </li>
+         <li class="menu__item">
+           <a href="#alunos"><i class="fa fa-user" aria-hidden="true"></i>
+           ALUNOS</a>
+         </li>
+         <li class="menu__item">
+           <a href="#professores"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+           PROFESSORES</a>
+         </li>
+       </ul>
+  </div> 
+   <!--Navbar Menu-->
   <div class="nav-bar">
     <a href="#home"><img src="./img/education.png" alt="Sistema de Gestão" />
     <legend>Sistema de Gestão Magnifinance</legend></a>
@@ -190,7 +221,7 @@
          <label>Nome</label>
           <input type="text" id="novo_aluno" placeholder="Digite o nome do aluno"> <br>
           <label>Nº de Matrícula</label>
-          <input type="number" id="novo_nrmatricula" placeholder="Digite o numero de matricula"> <br>
+          <input type="number" id="novo_nrmatricula" placeholder="Digite o numero de matricula" disabled> <br>
           <label>Data de Nascimento</label>
           <input type="date" id="nova_datanasc"><br>
           <label>Selecione o seu curso</label>
@@ -201,7 +232,7 @@
           <label>Disciplina</label>
           <input type="text" id="nova_disciplina1" placeholder="Digite o nome da disciplina"> <br>
           <label>Nota</label>
-          <input type="text" id="nova_nota1" placeholder="Digite a nota"> <br>
+          <input type="text" id="nova_nota1" placeholder="Digite a nota" maxlength="2"> <br>
           
           <label>Disciplina</label>
           <input type="text" id="nova_disciplina2" placeholder="Digite o nome da disciplina"> <br>
@@ -254,7 +285,7 @@
       <thead>
         <tr>
           <th>Professor</th>
-          <th>Data de Nascimento</th>
+          <th>Data Nasc.</th>
           <th>Salario</th>
           <th>Disciplina</th>
           <th>Editar</th>

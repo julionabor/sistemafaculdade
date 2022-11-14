@@ -1,4 +1,4 @@
-let listaCursos = [
+var listaCursos = [
   { 
     curso: "Engenharia Informatica",
   

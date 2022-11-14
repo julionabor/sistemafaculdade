@@ -1,5 +1,5 @@
 //Lista alunos
-
+function listaAlunos(){
 let dados = []
 let id = [0+1]
 var count = 0;
@@ -24,7 +24,6 @@ for(let i=0; i< listaCursos.length; i++){
         var cardAluno = document.createElement('div')
         cardAluno.setAttribute('id', `card${id}`);
         cardAluno.classList =`card`;
-        //console.log(i,num_matricula,nome_aluno,data_nasc,disciplina[i],nota[i])
         let seccaoAlunos = document.querySelector(".cards-alunos");
         cardAluno.innerHTML= `
                   <img src="./img/img_avatar.png" alt="Avatar">
@@ -70,6 +69,10 @@ for(let i=0; i< listaCursos.length; i++){
           }
                      
  }
+
+ document.getElementById("novo_nrmatricula").value = "0"+(parseInt(num_matricula)+1)
+} 
+
 //Listar Professores
 function professores() {
 let dadosP = []
@@ -177,27 +180,24 @@ function adicionar_aluno(){
     var nota2 = document.getElementById("nova_nota2").value;
     var disc3 = document.getElementById("nova_disciplina3").value;
     var nota3 = document.getElementById("nova_nota3").value;
-    if((nome || matricula || datanasc || disc1 || nota1 || disc2 || nota2 || disc3 || nota3) != ''){
+    if((nome && matricula && datanasc && disc1 && nota1 && disc2 && nota2 && disc3 && nota3) != ''){
         registar_aluno(nome,matricula,datanasc,curso,disc1,nota1,disc2,nota2,disc3,nota3);
     }else{
       alert("Por favor, todos os campos tem que ser preenchidos")
+      showAdd()
+      
     }
 }
 function registar_aluno(nome,matricula,datanasc,curso,disc1,nota1,disc2,nota2,disc3,nota3){
+  var aluno = {'Nome': nome,'Numero_Matricula': matricula, 'Data_Nascimento':datanasc}
 
-  const discip = [disc1,disc2,disc3]
-  const not = [nota1,nota2,nota3]
+  let cursos = listaCursos.filter((alunos) => alunos.curso === curso)
+  //cursos =cursos.slice('aluno')
+
+
+//let arr =  cursos.push(...aluno)
+  //console.log(arr)
   alert("Aluno Registado com sucesso")
-
-  const arr1 = listaCursos.filter((alunos) => alunos.curso === curso)
-  console.log(arr1)
-
-  const arr2 = [matricula,nome,datanasc,discip,not].concat(arr1);
-  
-  arr2.push(arr1)
-  console.log(arr2)
-
-
   //novo card
   let newcard = document.createElement('div')
   //classe do elemento
@@ -206,7 +206,7 @@ function registar_aluno(nome,matricula,datanasc,curso,disc1,nota1,disc2,nota2,di
     let new_aluno = document.querySelector(".cards-alunos");
     newcard.innerHTML = `<img src="./img/img_avatar.png" alt="Avatar">
       <div class="dados">
-        <h4><b>${nome} </b><i class="fa fa-pencil-square-o" aria-hidden="true" onclick="editar_aluno()"></i></h4>
+        <h4><b>${nome} </b><i class="fa fa-pencil-square-o" aria-hidden="true" onclick="editar_aluno(${matricula})"></i></h4>
         <p>Nº matrícula: ${matricula}</p>
         <p>Data de Nascimento: ${datanasc}</p>
         <table class="rTable">
@@ -234,16 +234,17 @@ function registar_aluno(nome,matricula,datanasc,curso,disc1,nota1,disc2,nota2,di
           </tbody>
         </table>
       </div>`;
-
   //inserindo card
     new_aluno.appendChild(newcard);
+    var mostrarAddAluno = document.querySelector('.add_aluno');
+
     var mostrarAddAluno = document.querySelector('.add_aluno');
     mostrarAddAluno.style.display = 'none';
 
 
+}
 
 
-  }
 function editar_aluno(num){
   
   // Get the modal
@@ -295,17 +296,15 @@ function editar_aluno(num){
                     else if(key === 'Nota')
                       var nota1 = value;
                       
-                  console.log(num)
+                  
                   var edit = document.getElementById('edit')
                   edit.removeAttribute= ("hidden");
                   document.getElementById('nameEdit').value = nome_aluno;
                   document.getElementById('matriculaEdit').value = num_matricula;
                   document.getElementById('dateEdit').value = data_nasc;
-                  //document.getElementById('disciplinaEdit').value= disc1;
-                  //document.getElementById('notaEdit').value= nota1;
+                  
                 }
-              } else {
-              console.log("Utilizador nao encontrado")
+              
             }
           }
         }
@@ -314,4 +313,6 @@ function editar_aluno(num){
 }
 
 
+listaAlunos();
+professores();
 
